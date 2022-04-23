@@ -27,11 +27,11 @@ def hello_gcs(event, context):
             folder_name = file_name.rsplit('/',1)[0]
             csvfile_name = file_name
             confile_name = folder_name + '/bigquery.conf'
-            jsonfile_name = folder_name + '/bigquery.json'
+            jsonfile_name = folder_name + '/schema.json'
         else:
             csvfile_name = file_name
             confile_name = 'bigquery.conf'
-            jsonfile_name = 'bigquery.json'
+            jsonfile_name = 'schema.json'
 
         # confファイル読込
         conf_file_text = download_text(cs_client, bucket_name, confile_name)
